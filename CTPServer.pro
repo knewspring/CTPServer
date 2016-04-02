@@ -35,14 +35,14 @@ SOURCES += main.cpp \
     src/Trader.cpp \
     src/WithdrawOrderCommand.cpp
 
-LIBS    += /home/pxsdirac/Documents/Qt/Simnow_cmd/lib/thostmduserapi.so \
-    /home/pxsdirac/Documents/Qt/Simnow_cmd/lib/thosttraderapi.so
+LIBS    += /home/pxsdirac/Documents/Qt/CTPServer/lib/thostmduserapi.so \
+    /home/pxsdirac/Documents/Qt/CTPServer/lib/thosttraderapi.so
 
 HEADERS += \
     lib/ThostFtdcMdApi.h \
     lib/ThostFtdcTraderApi.h \
     lib/ThostFtdcUserApiDataType.h \
-    lib/lib/ThostFtdcUserApiStruct.h \
+    lib/ThostFtdcUserApiStruct.h \
     src/AccountFund.h \
     src/AccountID.h \
     src/AccountPositionDao.h \
@@ -66,4 +66,6 @@ HEADERS += \
     src/StrategyPositionDao.h \
     src/TestStrategyPositionDao.h \
     src/Trader.h \
-    src/WithdrawOrderCommand.h
+    src/WithdrawOrderCommand.h \
+    lib/ThostFtdcUserApiStruct.h \
+    src/platform.h

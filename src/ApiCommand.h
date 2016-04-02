@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ThostFtdcTraderApi.h"
+#include "lib/ThostFtdcTraderApi.h"
 
 //封装api命令的接口
 

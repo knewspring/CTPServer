@@ -96,10 +96,10 @@ void init::initAccounts(){
 			qDebug() << "数据库中没有账户:" << investorID << "信息，请检查配置文件与数据库";
 			abort();
 		}
-		QString &password = query.value("password").toString();
-		QString &broker_id = query.value("broker_id").toString();
-		QString &front_address = query.value("front_address").toString();
-		auto accountID = make_shared<AccountID>();
+        const QString &password = query.value("password").toString();
+        const QString &broker_id = query.value("broker_id").toString();
+        const QString &front_address = query.value("front_address").toString();
+        auto accountID = make_shared<AccountID>();
 		accountID->setInvestorID(investorID);
 		accountID->setPassword(password);
 		accountID->setFrontAddress(front_address);

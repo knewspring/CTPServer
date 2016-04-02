@@ -24,14 +24,14 @@ shared_ptr<set<shared_ptr<Order>>> OrderDao::getActivedOrders(const QString &id,
 	query.exec();
 	auto orders = make_shared<set<shared_ptr<Order>>>();
 	while (query.next()){
-		QString &investor_id = query.value("investor_id").toString();
-		QDate &date = query.value("order_date").toDate();
+        QString investor_id = query.value("investor_id").toString();
+        const QDate &date = query.value("order_date").toDate();
 		int orderRef = query.value("order_ref").toInt();
-		QString &strategy_id = query.value("strategy_id").toString();
-		QString &instruction_id = query.value("instruction_id").toString();
-		QString &system_id = query.value("system_id").toString();
+        const QString &strategy_id = query.value("strategy_id").toString();
+        const QString &instruction_id = query.value("instruction_id").toString();
+        const QString &system_id = query.value("system_id").toString();
 		int sequence_num = query.value("sequence_num").toInt();
-		QString	&instrument_id = query.value("instrument_id").toString();
+        const QString	&instrument_id = query.value("instrument_id").toString();
 		char direction = query.value("direction").toString().at(0).toLatin1();
 		char open_close_flag = query.value("close_open_flag").toString().at(0).toLatin1();
 		double price = query.value("price").toDouble();

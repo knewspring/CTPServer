@@ -14,6 +14,8 @@
 #include <set>
 #include <vector>
 #include <qdebug.h>
+#include "platform.h"
+using namespace std;
 //#include <qsqlerror.h>
 
 #if _MSC_VER >= 1600
@@ -92,7 +94,7 @@ void Trader::cancleOrder(Order *order){
 	//strcpy(orderField->ExchangeID, exchangeID.toStdString().c_str());
 	strcpy(orderField->ExchangeID, "SHFE");	//测试环境下全都是上期所
 	strcpy(orderField->OrderSysID, order->getSystemId().toStdString().c_str());
-	itoa(order->getOrderRef(), orderField->OrderRef, 10);
+    itoa(order->getOrderRef(), orderField->OrderRef, 10);
 	orderField->ActionFlag = THOST_FTDC_AF_Delete;	//删除报单 '0'
 	shared_ptr<ApiCommand> command = make_shared<WithdrawOrderCommand>(api, orderField, requestID);
 	commandQueue.addCommand(command);
@@ -319,7 +321,7 @@ void Trader::initReportFilter(){
 	queryClose.bindValue(":date", date);
 	queryClose.exec();
 	while (queryClose.next()){
-		QString &trade_id = queryClose.value(0).toString();
+        const QString &trade_id = queryClose.value(0).toString();
 		reportFilter.insert(trade_id);
 	}
 	//查询开仓成交回报
@@ -329,7 +331,7 @@ void Trader::initReportFilter(){
 	queryOpen.bindValue(":date", date);
 	queryOpen.exec();
 	while (queryOpen.next()){
-		QString &trade_id = queryOpen.value("trade_id").toString();
+        const QString &trade_id = queryOpen.value("trade_id").toString();
 		reportFilter.insert(trade_id);
 	}
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ThostFtdcUserApiStruct.h"
+#include "lib/ThostFtdcUserApiStruct.h"
 
 #include <qtcpserver.h>
 #include <qtcpsocket.h>

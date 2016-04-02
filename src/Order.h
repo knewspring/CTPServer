@@ -3,7 +3,7 @@
 #include <qstring.h>
 #include <qdatetime.h>
 #include <qtimer.h>
-#include "ThostFtdcUserApiStruct.h"
+#include "lib/ThostFtdcUserApiStruct.h"
 
 class Order:public QObject{
 	Q_OBJECT

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ThostFtdcTraderApi.h"
+#include "lib/ThostFtdcTraderApi.h"
 #include "AccountID.h"
 #include "AccountFund.h"
 #include <memory>

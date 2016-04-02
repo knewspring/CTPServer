@@ -1,9 +1,9 @@
 #pragma once
 
-#include "ThostFtdcTraderApi.h"
+#include "lib/ThostFtdcTraderApi.h"
 #include "InstrumentInfo.h"
 #include "AccountID.h"
-#include "ThostFtdcTraderApi.h"
+#include "lib/ThostFtdcTraderApi.h"
 #include <qobject.h>
 #include <memory>
 #include <qstring.h>

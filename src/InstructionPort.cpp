@@ -1,5 +1,6 @@
 #include "InstructionPort.h"
 
+#include <QDataStream>
 #include "qdebug.h"
 #include "GVAR.h"
 using std::lock_guard;
@@ -24,7 +25,7 @@ void InstructionPort::newConnection(){
 
 //满62个字节才进行读取
 void InstructionPort::readyToRead(){
-	QDataStream socketStream(socket);
+    QDataStream socketStream(socket);
 	if (socket->bytesAvailable() >= 62){
 		char *str = new char[50];
 		socketStream.readRawData(str, 50);

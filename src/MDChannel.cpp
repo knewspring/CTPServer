@@ -2,6 +2,7 @@
 #include <qbytearray.h>
 #include <qdebug.h>
 #include <qthread.h>
+#include <QDataStream>
 
 #if _MSC_VER >= 1600
 #pragma execution_character_set("utf-8")

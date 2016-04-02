@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ThostFtdcMdApi.h"
+#include "lib/ThostFtdcMdApi.h"
 #include "MDChannel.h"
 #include <memory>
 #include <vector>
