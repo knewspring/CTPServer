@@ -10,62 +10,63 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    src/AccountFund.cpp \
-    src/AccountID.cpp \
-    src/AccountPositionDao.cpp \
-    src/ApiCommand.cpp \
+    src/entity/AccountFund.cpp \
+    src/entity/AccountID.cpp \
+    src/dao/AccountPositionDao.cpp \
+    src/command/ApiCommand.cpp \
     src/BackgroundTrader.cpp \
-    src/ComfirmSettlementCommand.cpp \
-    src/CommandQueue.cpp \
-    src/FundDao.cpp \
+    src/command/ComfirmSettlementCommand.cpp \
+    src/command/CommandQueue.cpp \
+    src/dao/FundDao.cpp \
     src/GVAR.cpp \
-    src/InsertOrderCommand.cpp \
+    src/command/InsertOrderCommand.cpp \
     src/InstructionPort.cpp \
-    src/InstrumentInfo.cpp \
-    src/LoginCommand.cpp \
+    src/entity/InstrumentInfo.cpp \
+    src/command/LoginCommand.cpp \
     src/MDBroadcast.cpp \
     src/MDChannel.cpp \
-    src/Order.cpp \
-    src/OrderDao.cpp \
-    src/QueryFundCommand.cpp \
-    src/QueryPositionCommand.cpp \
-    src/ReportDao.cpp \
-    src/StrategyPositionDao.cpp \
-    src/TestStrategyPositionDao.cpp \
+    src/entity/Order.cpp \
+    src/dao/OrderDao.cpp \
+    src/command/QueryFundCommand.cpp \
+    src/command/QueryPositionCommand.cpp \
+    src/dao/ReportDao.cpp \
+    src/dao/StrategyPositionDao.cpp \
+    src/dao/TestStrategyPositionDao.cpp \
     src/Trader.cpp \
-    src/WithdrawOrderCommand.cpp
+    src/command/WithdrawOrderCommand.cpp
 
-LIBS    += /home/pxsdirac/Documents/Qt/CTPServer/lib/thostmduserapi.so \
-    /home/pxsdirac/Documents/Qt/CTPServer/lib/thosttraderapi.so
-
+LIBS    += thostmduserapi.so \
+    thosttraderapi.so
+#LIBS    += /home/pxsdirac/Documents/Qt/CTPServer/lib/thostmduserapi.so \
+#    /home/pxsdirac/Documents/Qt/CTPServer/lib/thosttraderapi.so
 HEADERS += \
     lib/ThostFtdcMdApi.h \
     lib/ThostFtdcTraderApi.h \
     lib/ThostFtdcUserApiDataType.h \
     lib/ThostFtdcUserApiStruct.h \
-    src/AccountFund.h \
-    src/AccountID.h \
-    src/AccountPositionDao.h \
-    src/ApiCommand.h \
+    src/entity/AccountFund.h \
+    src/entity/AccountID.h \
+    src/dao/AccountPositionDao.h \
+    src/command/ApiCommand.h \
     src/BackgroundTrader.h \
-    src/ComfirmSettlementCommand.h \
-    src/CommandQueue.h \
-    src/FundDao.h \
+    src/command/ComfirmSettlementCommand.h \
+    src/command/CommandQueue.h \
+    src/dao/FundDao.h \
     src/GVAR.h \
-    src/InsertOrderCommand.h \
+    src/command/InsertOrderCommand.h \
     src/InstructionPort.h \
-    src/InstrumentInfo.h \
-    src/LoginCommand.h \
+    src/entity/InstrumentInfo.h \
+    src/command/LoginCommand.h \
     src/MDBroadcast.h \
     src/MDChannel.h \
-    src/Order.h \
-    src/OrderDao.h \
-    src/QueryFundCommand.h \
-    src/QueryPositionCommand.h \
-    src/ReportDao.h \
-    src/StrategyPositionDao.h \
-    src/TestStrategyPositionDao.h \
+    src/entity/Order.h \
+    src/dao/OrderDao.h \
+    src/command/QueryFundCommand.h \
+    src/command/QueryPositionCommand.h \
+    src/dao/ReportDao.h \
+    src/dao/StrategyPositionDao.h \
+    src/dao/TestStrategyPositionDao.h \
     src/Trader.h \
-    src/WithdrawOrderCommand.h \
+    src/command/WithdrawOrderCommand.h \
     lib/ThostFtdcUserApiStruct.h \
-    src/platform.h
+    src/header/platform.h

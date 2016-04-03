@@ -1,6 +1,6 @@
 #include "OrderDao.h"
-#include "GVAR.h"
-#include "BackgroundTrader.h"
+#include "src/GVAR.h"
+#include "src/BackgroundTrader.h"
 #include <qsqlquery.h>
 #include <qvariant.h>
 #include <qstring.h>

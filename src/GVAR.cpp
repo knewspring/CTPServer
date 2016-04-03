@@ -1,8 +1,8 @@
 #include "GVAR.h"
-#include "StrategyPositionDao.h"
+#include "dao/StrategyPositionDao.h"
 #include "BackgroundTrader.h"
 #include "MDBroadcast.h"
-#include "AccountID.h"
+#include "entity/AccountID.h"
 #include "Trader.h"
 #include <qthread.h>
 #include <qfile.h>
@@ -28,10 +28,10 @@ InstructionPort *instructionPort = nullptr;
 //连接数据库
 void init::connectToDatabase(){
 	DATABASE = QSqlDatabase::addDatabase("QMYSQL");
-	DATABASE.setHostName("127.0.0.1");
-	DATABASE.setDatabaseName("trade_server");
+    DATABASE.setHostName("pxsdirac.cn");
+    DATABASE.setDatabaseName("ctp");
 	DATABASE.setUserName("root");
-	DATABASE.setPassword("");
+    DATABASE.setPassword("123456");
 	if (!DATABASE.open()){
 		qDebug() << "数据库连接错误！";
 		abort();
@@ -77,9 +77,9 @@ void init::initStrategyPosition(){
 
 //初始化交易交易账户
 void init::initAccounts(){
-	QFile iniFile("user/acount.ini");
+    QFile iniFile("user/account.ini");
 	if (!iniFile.open(QIODevice::ReadOnly | QIODevice::Text)){
-		qDebug() << "cannot find front.ini";
+        qDebug() << "cannot find account.ini";
 		abort();
 	}
 	QTextStream in(&iniFile);

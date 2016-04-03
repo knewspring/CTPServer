@@ -1,19 +1,19 @@
 #pragma once
 
 #include "lib/ThostFtdcTraderApi.h"
-#include "AccountID.h"
-#include "AccountFund.h"
+#include "entity/AccountID.h"
+#include "entity/AccountFund.h"
 #include <memory>
 #include <map>
 #include <qtimer.h>
 #include <qstring.h>
-#include "Order.h"
-#include "OrderDao.h"
-#include "CommandQueue.h"
-#include "AccountPositionDao.h"
-#include "FundDao.h"
-#include "StrategyPositionDao.h"
-#include "ReportDao.h"
+#include "entity/Order.h"
+#include "dao/OrderDao.h"
+#include "command/CommandQueue.h"
+#include "dao/AccountPositionDao.h"
+#include "dao/FundDao.h"
+#include "dao/StrategyPositionDao.h"
+#include "dao/ReportDao.h"
 #include <qbytearray.h>
 #include <qobject.h>
 

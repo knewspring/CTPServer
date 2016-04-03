@@ -1,8 +1,8 @@
 #pragma once
 
 #include "lib/ThostFtdcTraderApi.h"
-#include "InstrumentInfo.h"
-#include "AccountID.h"
+#include "entity/InstrumentInfo.h"
+#include "entity/AccountID.h"
 #include "lib/ThostFtdcTraderApi.h"
 #include <qobject.h>
 #include <memory>

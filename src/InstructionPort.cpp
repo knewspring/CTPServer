@@ -35,9 +35,9 @@ void InstructionPort::readyToRead(){
 		double price;
 		socketStream >> price;
 		QString investorId = instruction->mid(15, 16).trimmed();
-		auto &trader = TRADERS[investorId];
+        auto &trader = TRADERS[investorId];
 		trader->generateAndExecuteOrder(instruction, volume, price);
-	}
+    }
 }
 
 //写回客户端指令执行结果

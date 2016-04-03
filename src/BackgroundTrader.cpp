@@ -22,13 +22,10 @@ using std::map;
 shared_ptr<BackgroundTrader> BackgroundTrader::bgTrader = nullptr;
 
 std::shared_ptr<BackgroundTrader> BackgroundTrader::getInstance(){
-	if (bgTrader != nullptr){
-		return bgTrader;
-	}
-	else{
-		bgTrader = shared_ptr<BackgroundTrader>(new BackgroundTrader());
-		return bgTrader;
-	}
+    if (bgTrader == nullptr){
+        bgTrader = shared_ptr<BackgroundTrader>(new BackgroundTrader);
+    }
+    return bgTrader;
 }
 
 BackgroundTrader::~BackgroundTrader(){
@@ -52,9 +49,9 @@ const map<QString, shared_ptr<InstrumentInfo>> & BackgroundTrader::getInstrument
 //构造函数
 BackgroundTrader::BackgroundTrader(){
 	accountID = make_shared<AccountID>();
-	//从数据库中读取后台账户的信息:后台账号为实盘账号83601689
+    //从数据库中读取后台账户的信息
 	QSqlQuery query(DATABASE);
-	QString initialize_AccountID_SQL = "select * from account where investor_id = 83601689";
+    QString initialize_AccountID_SQL = "select * from account";
 	if (query.exec(initialize_AccountID_SQL) && query.next()){
 		QString investor_id = query.value("investor_id").toString();
 		QString password = query.value("password").toString();
@@ -196,6 +193,7 @@ void BackgroundTrader::errorInstrumentID(char *id){
 ///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 void BackgroundTrader::OnFrontConnected(){
 	//连接到服务器之后自动登陆,让账户与服务器连接上
+    qDebug()<<"front connected";
 	CThostFtdcReqUserLoginField *loginField = new CThostFtdcReqUserLoginField();
 	strcpy(loginField->BrokerID, accountID->getBrokerID().toStdString().c_str());
 	strcpy(loginField->UserID, accountID->getInvestorID().toStdString().c_str());
